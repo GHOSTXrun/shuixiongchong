@@ -224,3 +224,11 @@ body { isolation: isolate; }
 #motion-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 footer { padding-bottom: 76px; }
 @media (max-width: 560px) { .links .twitter-button { padding: 0 9px; } .twitter-button span { display: none; } .nav { gap: 8px; } }
+
+/* Explicit full-viewport background layer; content always stays above it. */
+#water-bears { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; mix-blend-mode: normal; }
+header, main.wrap, footer { position: relative; z-index: 1; }
+.skip-link { z-index: 5; }
+.logo { padding: 44px 0 38px; }
+.logo img { width: min(78%, 290px); height: auto; mix-blend-mode: normal; background: transparent; }
+@media (max-width: 560px) { .logo { padding: 32px 0 28px; } .logo img { width: min(78%, 250px); } }

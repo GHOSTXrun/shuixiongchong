@@ -39,8 +39,8 @@
       ctx.translate(bear.x, bear.y + Math.sin(bear.phase) * 13);
       ctx.rotate(Math.sin(bear.phase * .7) * .13);
       ctx.scale(bear.speed < 0 ? -1 : 1, 1);
-      // Render the mascot area from the original, unchanged square logo.
-      ctx.drawImage(logo, 320, 385, 620, 490, -bear.size / 2, -bear.size * .395, bear.size, bear.size * .79);
+      // Render the transparent mascot with its full silhouette.
+      ctx.drawImage(logo, -bear.size / 2, -bear.size / 2, bear.size, bear.size);
       ctx.restore();
     }
   }
@@ -66,5 +66,5 @@
   logo.onload = () => { loaded = true; resize(); toggle.hidden = false; sync(); };
   logo.onerror = () => { canvas.hidden = true; toggle.hidden = true; };
   resize();
-  logo.src = 'tunvio.png';
+  logo.src = 'tunvio-transparent.png';
 })();
