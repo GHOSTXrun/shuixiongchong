@@ -1,9 +1,10 @@
 :root {
   --bg: #000000;
   --text: #e6e6e6;
-  --muted: #6a6a6a;
+  --muted: #909090;
   --dim: #9a9a9a;
   --line: #171717;
+  --line2: #383838;
   --code: #8fb8e6;
   --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -138,4 +139,25 @@ footer {
   .spec dl > div,
   .srow { grid-template-columns: 92px 1fr; gap: 12px; }
   footer { flex-direction: column; gap: 6px; }
+}
+
+/* Navigation and small-screen readability */
+h1 { margin: 0 0 12px; font-size: clamp(24px, 5vw, 32px); line-height: 1.25; letter-spacing: -0.7px; }
+.intro .project-stage { color: var(--dim); font-family: var(--mono); font-size: 12px; margin-bottom: 20px; }
+a:focus-visible { outline: 2px solid var(--code); outline-offset: 5px; border-radius: 3px; }
+.skip-link { position: absolute; top: 8px; left: 12px; padding: 8px 12px; background: var(--text); color: var(--bg); transform: translateY(-180%); z-index: 10; }
+.skip-link:focus { transform: translateY(0); }
+.links { gap: 6px; }
+.links a { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+.ca { overflow-wrap: anywhere; }
+.diagram { overflow-x: auto; padding: 4px 2px 8px; }
+.diagram svg { min-width: 480px; }
+.spec dd, .srow p { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 360px) {
+  .nav, .wrap { padding-left: 18px; padding-right: 18px; }
+  .spec dl > div, .srow { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .links a { transition: none; }
 }
