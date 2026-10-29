@@ -41,6 +41,6 @@ No license was supplied with the original archive. Confirm ownership and choose 
 
 ## Animated background
 
-Small copies of the supplied mascot swim behind the page using Canvas. Desktop renders 40 and mobile renders 16. Animation pauses in hidden tabs, respects reduced-motion preferences and includes a pause/resume control. The Twitter button currently opens a share composer; replace it with the confirmed official account URL when available.
+Small copies of the supplied mascot swim behind the page using Canvas. Desktop renders 40 and mobile renders 16. Animation pauses in hidden tabs, respects reduced-motion preferences. The Twitter button currently opens a share composer; replace it with the confirmed official account URL when available.
 
 The active logo is an alpha-transparent cutout in tunvio-transparent.png. The original supplied image remains in tunvio.png. The animation canvas is fixed to the viewport beneath page content.

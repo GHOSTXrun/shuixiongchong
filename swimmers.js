@@ -1,10 +1,9 @@
 (() => {
   'use strict';
   const canvas = document.querySelector('#water-bears');
-  const toggle = document.querySelector('#motion-toggle');
-  if (!canvas || !toggle) return;
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  if (!ctx) { toggle.hidden = true; return; }
+  if (!ctx) return;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const logo = new Image();
   let width = 0, height = 0, bears = [], frame = 0, last = 0;
@@ -55,16 +54,13 @@
     cancelAnimationFrame(frame);
     frame = 0;
     last = 0;
-    toggle.textContent = paused ? 'Resume animation' : 'Pause animation';
-    toggle.setAttribute('aria-pressed', String(paused));
     if (!paused && !document.hidden && loaded) frame = requestAnimationFrame(tick);
   }
-  toggle.addEventListener('click', () => { paused = !paused; sync(); });
   reduced.addEventListener('change', () => { paused = reduced.matches; sync(); });
   document.addEventListener('visibilitychange', sync);
   window.addEventListener('resize', resize, { passive: true });
-  logo.onload = () => { loaded = true; resize(); toggle.hidden = false; sync(); };
-  logo.onerror = () => { canvas.hidden = true; toggle.hidden = true; };
+  logo.onload = () => { loaded = true; resize(); sync(); };
+  logo.onerror = () => { canvas.hidden = true; };
   resize();
   logo.src = 'tunvio-transparent.png';
 })();

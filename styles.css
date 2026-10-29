@@ -220,9 +220,7 @@ body { isolation: isolate; }
 .wrap { background: linear-gradient(90deg, transparent, rgba(3, 12, 25, .68) 12%, rgba(3, 12, 25, .68) 88%, transparent); }
 .links .twitter-button { gap: 7px; padding: 0 12px; border: 1px solid rgba(84, 207, 255, .5); border-radius: 24px; background: rgba(8, 45, 65, .65); color: var(--blue); text-decoration: none; font-family: var(--mono); font-size: 12px; }
 .links .twitter-button:hover { color: var(--gold); border-color: var(--gold); }
-#motion-toggle { position: fixed; bottom: 16px; right: 16px; z-index: 3; padding: 10px 14px; border: 1px solid var(--line2); border-radius: 24px; background: #071726; color: var(--gold-soft); font: 11px var(--mono); cursor: pointer; }
-#motion-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-footer { padding-bottom: 76px; }
+footer { padding-bottom: 24px; }
 @media (max-width: 560px) { .links .twitter-button { padding: 0 9px; } .twitter-button span { display: none; } .nav { gap: 8px; } }
 
 /* Explicit full-viewport background layer; content always stays above it. */
