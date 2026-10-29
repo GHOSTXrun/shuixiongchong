@@ -12,12 +12,11 @@ Open index.html directly in a browser. No package installation or build is requi
 
 ## GitHub Pages deployment
 
-1. Open repository Settings → Pages → Build and deployment.
-2. Set Source to GitHub Actions. This initial repository setting requires an administrator.
-3. Open Actions → Deploy website to GitHub Pages → Run workflow. Later pushes to main deploy automatically.
-4. Use the successful deployment URL shown by the workflow. Expected address: https://ghostxrun.github.io/shuixiongchong/
+GitHub Pages is already enabled with branch-based deployment. Pushes to main publish through the built-in pages build and deployment workflow. Site address: https://ghostxrun.github.io/shuixiongchong/
 
-The workflow publishes only index.html, styles.css and milno.png. No secrets or additional hosting service are required. If Pages is disabled, the deployment will fail until step 2 is completed.
+An optional manual workflow is also included. To switch to artifact-based deployment, first set Settings → Pages → Source to GitHub Actions, then run Actions → Deploy website to GitHub Pages. It does not run on pushes, avoiding duplicate deployments.
+
+The workflow publishes only index.html, styles.css and milno.png. No secrets or additional hosting service are required. The optional manual workflow requires Pages to be configured for GitHub Actions first.
 
 ## Project files
 
