@@ -16,7 +16,7 @@ GitHub Pages is already enabled with branch-based deployment. Pushes to main pub
 
 An optional manual workflow is also included. To switch to artifact-based deployment, first set Settings → Pages → Source to GitHub Actions, then run Actions → Deploy website to GitHub Pages. It does not run on pushes, avoiding duplicate deployments.
 
-The workflow publishes only index.html, styles.css and tunvio.png. No secrets or additional hosting service are required. The optional manual workflow requires Pages to be configured for GitHub Actions first.
+The workflow publishes only index.html, styles.css, swimmers.js and tunvio.png. No secrets or additional hosting service are required. The optional manual workflow requires Pages to be configured for GitHub Actions first.
 
 ## Project files
 
@@ -38,3 +38,7 @@ The workflow publishes only index.html, styles.css and tunvio.png. No secrets or
 Update the CA only when an address is confirmed. The old project X link has been removed; add the confirmed TUNVIO account when available. The paper link is an external design reference, not evidence of an implementation in this repository. If hosting moves, update the absolute Open Graph and Twitter URLs in index.html.
 
 No license was supplied with the original archive. Confirm ownership and choose a license before inviting reuse.
+
+## Animated background
+
+Small copies of the supplied mascot swim behind the page using Canvas. Desktop renders 40 and mobile renders 16. Animation pauses in hidden tabs, respects reduced-motion preferences and includes a pause/resume control. The Twitter button currently opens a share composer; replace it with the confirmed official account URL when available.

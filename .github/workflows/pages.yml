@@ -25,7 +25,7 @@ jobs:
       - name: Prepare website files
         run: |
           mkdir -p _site
-          cp index.html styles.css tunvio.png _site/
+          cp index.html styles.css swimmers.js tunvio.png _site/
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
