@@ -1,11 +1,15 @@
 :root {
-  --bg: #000000;
-  --text: #e6e6e6;
-  --muted: #909090;
-  --dim: #9a9a9a;
-  --line: #171717;
-  --line2: #383838;
-  --code: #8fb8e6;
+  --bg: #030c19;
+  --text: #dcf4ff;
+  --muted: #91bed6;
+  --dim: #b2d6e9;
+  --line: #203e52;
+  --line2: #398fb6;
+  --code: #75d8ff;
+  --blue: #54cfff;
+  --gold: #ffc66b;
+  --gold-soft: #f4d8a4;
+  --panel: #091c2c;
   --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -54,10 +58,10 @@ header { border-bottom: 1px solid var(--line); }
 .intro p { font-size: 17px; line-height: 1.75; color: var(--text); margin: 0; letter-spacing: -0.1px; }
 
 code {
-  font-family: var(--mono); font-size: 0.88em; color: #cfcfcf;
-  background: #0b0b0b; border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px;
+  font-family: var(--mono); font-size: 0.88em; color: var(--gold-soft);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px;
 }
-/* the one accented value on the whole site */
+/* Seed derivation accent */
 code.f { color: var(--code); }
 
 hr { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
@@ -80,15 +84,15 @@ h2 {
 .diagram { margin: 6px 0 30px; }
 .diagram svg { width: 100%; height: auto; display: block; }
 .diagram text { font-family: var(--mono); text-anchor: middle; fill: var(--dim); font-size: 12px; }
-.diagram .node rect, .diagram .snode circle { fill: #070707; stroke: var(--line2); stroke-width: 1; }
+.diagram .node rect, .diagram .snode circle { fill: var(--panel); stroke: var(--line2); stroke-width: 1; }
 .diagram .node.open rect { stroke-dasharray: 3 4; }
 .diagram .node text, .diagram .snode text { fill: var(--text); font-size: 12.5px; }
 .diagram .node .sub { fill: var(--muted); font-size: 9.5px; }
-.diagram .snode.dead circle { stroke: #333; }
+.diagram .snode.dead circle { stroke: var(--gold); }
 .diagram .snode.dead text { fill: var(--muted); }
 .diagram text.acc { fill: var(--code); font-size: 12px; }
 .diagram .lab { fill: var(--muted); font-size: 10.5px; }
-.diagram line, .diagram path { stroke: #4f4f4f; stroke-width: 1; }
+.diagram line, .diagram path { stroke: var(--blue); stroke-width: 1; }
 .diagram figcaption { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: center; margin-top: 12px; line-height: 1.5; }
 
 /* prose sections */
@@ -166,3 +170,46 @@ a:focus-visible { outline: 2px solid var(--code); outline-offset: 5px; border-ra
 .logo { padding: 24px 0 28px; }
 .logo img { width: min(100%, 440px); height: auto; }
 @media (max-width: 560px) { .logo { padding: 12px 0 24px; } .logo img { width: min(100%, 360px); } }
+
+/* TUNVIO: glacial blue and warm gold from the supplied mascot. */
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 85% 650px at 8% 8%, rgba(0, 151, 245, .24), transparent 75%),
+    radial-gradient(ellipse 75% 680px at 100% 22%, rgba(255, 177, 54, .16), transparent 75%),
+    radial-gradient(ellipse 85% 900px at 0% 70%, rgba(25, 147, 210, .14), transparent 78%),
+    linear-gradient(135deg, #031426 0%, #06101b 45%, #1b160f 100%);
+}
+header { background: rgba(3, 14, 27, .8); border-bottom-color: rgba(84, 207, 255, .24); }
+.brand { color: var(--blue); font-weight: 700; letter-spacing: 2px; text-shadow: 0 0 20px rgba(84, 207, 255, .25); }
+.ca .lbl, .ca .addr { color: var(--gold); }
+.links a { color: var(--blue); }
+.links a:hover { color: var(--gold); }
+.logo img { mix-blend-mode: screen; }
+h1 { color: var(--blue); }
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  h1 {
+    background: linear-gradient(100deg, #75dcff 5%, #b8eaff 42%, #ffce7d 86%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+}
+h2, .mech .step .n, .spec dt, .srow .k { color: var(--gold); }
+.mech h3, .qa .q { color: var(--blue); }
+.intro .project-stage { color: var(--gold-soft); }
+.lore .cite a { color: var(--gold); border-bottom-color: rgba(255, 198, 107, .4); }
+.lore .cite a:hover { color: #ffe5b8; }
+hr { height: 1px; border: 0; background: linear-gradient(90deg, rgba(84, 207, 255, .5), rgba(84, 207, 255, .12) 48%, rgba(255, 198, 107, .5)); }
+.diagram { border: 1px solid rgba(84, 207, 255, .2); border-radius: 12px; background: rgba(5, 21, 36, .65); padding: 18px 10px 14px; }
+.diagram .node text, .diagram .snode text { fill: var(--blue); }
+.diagram .node .sub, .diagram .lab { fill: var(--gold-soft); }
+.diagram text.acc { fill: var(--gold); }
+.diagram .snode.dead text { fill: var(--gold-soft); }
+.diagram marker path { fill: var(--blue); stroke: var(--blue); }
+.diagram figcaption { color: var(--dim); }
+footer { border-top-color: rgba(255, 198, 107, .28); color: var(--gold-soft); }
+footer > :first-child { color: var(--blue); }
+::selection { background: #ffc66b; color: #071726; }
+@media (forced-colors: active) {
+  h1 { background: none; color: CanvasText; }
+}
