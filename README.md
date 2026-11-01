@@ -4,7 +4,7 @@ A static project overview for a water bear inspired agent identity experiment.
 
 ## Current status
 
-This repository contains the website only: HTML, CSS and a mascot image. It does not contain a runnable agent, wallet integration, a Groth16 circuit, an Anchor program or a deployed contract. All runtime and chain features are planned. CA remains TBA.
+This repository contains the website only: HTML, CSS and a mascot image. It does not contain a runnable agent, wallet integration, a Groth16 circuit, an Anchor program or a deployed contract. All runtime and chain features are planned. Project CA (provided by the owner): 7StfM3WuhLG5GaaFBNg1XxBkhVE4pHZCF8Hi5sQDpump.
 
 ## Preview locally
 
